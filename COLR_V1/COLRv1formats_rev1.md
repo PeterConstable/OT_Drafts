@@ -68,16 +68,16 @@ This is a draft of structure specifications for a proposed addition to the OpenT
 
 ## Color structures
 
-Proposed ```color``` struct has an index to a CPAL ```ColorRecord```, but adds a transparency field that is variable. Note that the CPAL ```ColorRecord``` already has an alpha value. The rationale for adding transparency here is that it is a better design to let a color palette have RGB values only, and to set an alpha / transparency / opacity in the elements where the color is used.
+Proposed ```color``` struct has an index to a CPAL ```ColorRecord```, but adds a opacity field that is variable. Note that the CPAL ```ColorRecord``` already has an alpha value. The rationale for adding opacity here is that it is a better design to let a color palette have RGB values only, and to set an alpha / opacity / opacity in the elements where the color is used.
 
 > **Note:** We need to call it something other than "color record" since that is already used.
 
-### _ColorIndex Record_ (palette index with variable transparency)
+### _ColorIndex Record_ (palette index with variable opacity)
 
 | Type | Name | Description |
 |-|-|-|
 | uint16 | paletteIndex | |
-| VarF2Dot14 | transparency | transparency.scalar must be in the range 0 to 1 (inclusive) |
+| VarF2Dot14 | opacity | opacity.scalar, and all variations of it, must be in the range 0 to 1 (inclusive) |
 
 (Size: 2 + 6 = 8 bytes)
 
@@ -85,7 +85,7 @@ Proposed ```color``` struct has an index to a CPAL ```ColorRecord```, but adds a
 
 | Type | Name | Description |
 |-|-|-|
-| VarF2Dot14 | stopOffset | stopOffset.scalar must be in the range 0 to 1 (inclusive) |
+| VarF2Dot14 | stopOffset | stopOffset.scalar, and all variations of it, must be in the range 0 to 1 (inclusive) |
 | ColorIndex | color |
 
 (Size: 6 + 8 = 14 bytes)
