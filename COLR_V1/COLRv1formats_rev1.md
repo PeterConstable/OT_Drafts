@@ -68,7 +68,7 @@ This is a draft of structure specifications for a proposed addition to the OpenT
 
 ## Color structures
 
-Proposed ```color``` struct has an index to a CPAL ```ColorRecord```, but adds a opacity field that is variable. Note that the CPAL ```ColorRecord``` already has an alpha value. The rationale for adding opacity here is that it is a better design to let a color palette have RGB values only, and to set an alpha / opacity / opacity in the elements where the color is used.
+Proposed ```color``` struct has an index to a CPAL ```ColorRecord```, but adds a opacity field that is variable. Note that the CPAL ```ColorRecord``` already has an alpha value. The rationale for adding opacity here is that it is a better design to let a color palette have RGB values only, and to set an alpha / opacity in the elements where the color is used.
 
 > **Note:** We need to call it something other than "color record" since that is already used.
 
