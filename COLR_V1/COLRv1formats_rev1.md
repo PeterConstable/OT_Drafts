@@ -158,7 +158,7 @@ The ```extend``` field must be one of the following values:
 | Offset32 | baseGlyphRecordsOffset | offset to baseGlyphRecords array, from start of COLR table |
 | Offset32 | layerRecordsOffset | offset to layerRecords array, from start of COLR table |
 | uint16 | numLayerRecords | may be 0 in a version 1 table |
-| Offset32 | baseGlyphV1ListOffset | offset to baseGlyphV1List **table**, from start of the CPAL table |
+| Offset32 | baseGlyphV1ListOffset | offset to baseGlyphV1List table, from start of the COLR table |
 | Offset32 | itemVariationStoreOffset | offset to ItemVariationStore, from start of COLR table |
 
 (Size: 4 \* 4 + 3 \* 3 = 22 bytes)
