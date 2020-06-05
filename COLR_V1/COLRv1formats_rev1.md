@@ -77,7 +77,7 @@ Proposed ```color``` struct has an index to a CPAL ```ColorRecord```, but adds a
 | Type | Name | Description |
 |-|-|-|
 | uint16 | paletteIndex | |
-| VarF2Dot14 | opacity | opacity.scalar, and all variations of it, must be in the range 0 to 1 (inclusive) |
+| VarF2Dot14 | alpha | alpha.scalar, and all variations of it, must be in the range 0 to 1 (inclusive) |
 
 (Size: 2 + 6 = 8 bytes)
 
