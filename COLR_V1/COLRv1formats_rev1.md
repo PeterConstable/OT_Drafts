@@ -190,7 +190,7 @@ The ```extend``` field must be one of the following values:
 
 (Size: variable; 4 byte header)
 
-### _PaintRecord_
+### _LayersV1Record_
 
 |Type | Field name | Description |
 |-|-|-|
