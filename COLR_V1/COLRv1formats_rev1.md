@@ -9,8 +9,8 @@ This is a draft of structure specifications for a proposed addition to the OpenT
 | Type | Name | Description |
 |-|-|-|
 | Fixed | scalar | |
-| uint16 | varOuterIdx | |
-| uint16 | varInnerIdx | |
+| uint16 | varOuterIndex | |
+| uint16 | varInnerIndex | |
 
 (Size: 4 + 2 \* 2 = 8 bytes)
 
@@ -19,8 +19,8 @@ This is a draft of structure specifications for a proposed addition to the OpenT
 | Type | Name | Description |
 |-|-|-|
 | F2Dot14 | scalar | must be in range [-1.0, 1.0] |
-| uint16 | varOuterIdx | |
-| uint16 | varInnerIdx | |
+| uint16 | varOuterIndex | |
+| uint16 | varInnerIndex | |
 
 (Size: 3 \* 2 = 6 bytes)
 
@@ -31,8 +31,8 @@ This is a draft of structure specifications for a proposed addition to the OpenT
 | Type | Name | Description |
 |-|-|-|
 | UFWORD | distance | |
-| uint16 | varOuterIdx | |
-| uint16 | varInnerIdx | |
+| uint16 | varOuterIndex | |
+| uint16 | varInnerIndex | |
 
 (Size: 3 \* 2 = 6 bytes)
 
@@ -41,8 +41,8 @@ This is a draft of structure specifications for a proposed addition to the OpenT
 | Type | Name | Description |
 |-|-|-|
 | FWORD | coordinate | |
-| uint16 | varOuterIdx | |
-| uint16 | varInnerIdx | |
+| uint16 | varOuterIndex | |
+| uint16 | varInnerIndex | |
 
 (Size: 3 \* 2 = 6 bytes)
 
