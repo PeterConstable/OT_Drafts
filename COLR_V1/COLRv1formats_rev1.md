@@ -185,8 +185,8 @@ The ```extend``` field must be one of the following values:
 
 |Type | Field name | Description |
 |-|-|-|
-| uint32 | numPaintRecords |  |
-| PaintRecord | paintRecords[numPaintRecords] | |
+| uint32 | numLayerV1Records |  |
+| LayerV1Record | layerV1Records[numLayerV1Records] | |
 
 (Size: variable; 4 byte header)
 
