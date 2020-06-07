@@ -177,7 +177,7 @@ The ```extend``` field must be one of the following values:
 |Type | Field name | Description |
 |-|-|-|
 | uint16 | glyphID | (or could change spec to uint32) |
-| Offset32 | layerV1Offset | offset to LayersV1 table, from start of BaseGlyphsV1List table |
+| Offset32 | layersV1Offset | offset to LayersV1 table, from start of BaseGlyphsV1List table |
 
 (Size: 6 bytes (or 8 if changing to 32-bit GIDs))
 
