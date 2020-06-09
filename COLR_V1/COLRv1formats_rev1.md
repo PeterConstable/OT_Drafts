@@ -141,7 +141,7 @@ The ```extend``` field must be one of the following values:
 | Point | center1 | |
 | VarUFWord | radius0 | |
 | VarUFWord | radius1 | |
-| Offset32 | transformOffset | Offset to Affine2x2 table, from start of PaintFormat3 table |
+| Offset32 | transformOffset | Offset to Affine2x2 table, from start of PaintFormat3 table. May be null. |
 
 (Size (header, excluding ColorLine and Affix2x2 subtables): 2 + 4 + 2 \* 12 + 2 \* 6 + 4 = 46 bytes)
 
