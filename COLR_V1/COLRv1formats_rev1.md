@@ -131,17 +131,17 @@ The ```extend``` field must be one of the following values:
 
 (Size (header, excluding ColorLine subtable):  2 + 4 + 3 \* 12 = 42 bytes)
 
-### _PaintFormat3 Table_ (radial gradient)
+### _PaintFormat3 Table_ (conical/radial gradient)
 
 |Type | Field name | Description |
 |-|-|-|
-| uint16 | format | set to 2 |
+| uint16 | format | set to 3 |
 | Offset32 | colorLineOffset | offset from start of FillFormat3 table |
 | Point | center0 | |
 | Point | center1 | |
 | VarUFWord | radius0 | |
 | VarUFWord | radius1 | |
-| Affine2By2 | transform | |
+| Offset32 | transformOffset | Offset to Affine2x2 table, from start of PaintFormat3 table |
 
 (Size (header, excluding ColorLine subtable): 2 + 4 + 2 \* 12 + 2 \* 6 + 32 = 74 bytes)
 
