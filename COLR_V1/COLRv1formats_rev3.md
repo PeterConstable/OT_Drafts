@@ -12,23 +12,25 @@ The format is primarily based on a [C++ spec by Google](https://github.com/googl
 
 | Type | Name | Description |
 |-|-|-|
-| Fixed | scalar | |
+| Fixed | value | |
 | uint16 | varOuterIndex | |
 | uint16 | varInnerIndex | |
 
 (Size: 4 + 2 \* 2 = 8 bytes)
 
-### _VarF2Dot14 Record_ (variable, normalized value)
+### _VarF2Dot14 Record_ (variable, F2Dot14)
 
 | Type | Name | Description |
 |-|-|-|
-| F2Dot14 | scalar | must be in range [-1.0, 1.0] |
+| F2Dot14 | value | |
 | uint16 | varOuterIndex | |
 | uint16 | varInnerIndex | |
 
 (Size: 3 \* 2 = 6 bytes)
 
-* Could define a subclass that has a validation constraint limiting to range [0, 1]
+* Inherently limited to range [-2, 2)
+* In some contexts, could be limited to range [-1.0, 1.0]
+* In some COLR contexts, must be in range [0, 1]
 
 ### _VarUFWord Record_ (variable design-grid distance)
 
