@@ -37,7 +37,7 @@ If there is no IVS subtable, then all values are static. (In this case, all delt
 
 However, if there is an IVS subtable present, there is no way to distinguish between a value that is static (non-variable) versus a value that has delta-set indices (0, 0).
 
-(This issue doesn't arise in any existing use of IVS tables because the formats for the items that *could* be varied does not have mandatory delta-set indices. For example, in a Ligature Caret List within GDEF, the caret values are not variable unless a format 3 CaretValue table is used, and the referenced Device or VariationIndex table has a deltaFormat member set to 0x8000.)
+This issue doesn't arise in any existing use of IVS tables because the formats for the items that *could* be varied do not have mandatory delta-set indices. For example, in a Ligature Caret List within GDEF, the caret values are not variable unless a format 3 CaretValue table is used, and the referenced Device or VariationIndex table has a deltaFormat member set to 0x8000.
 
 Possible solutions:
 
