@@ -2,9 +2,9 @@
 
 This is a draft of structure specifications for a proposed addition to the OpenType spec.
 
-The format is primarily based on a [C++ spec by Google](https://github.com/googlefonts/colr-gradients-spec/blob/master/colr-gradients-spec.md) and on their preliminary implementation reflected in the [noto-handwriting-color_1.ttf file](https://github.com/googlefonts/color-fonts/tree/master/fonts) and in [this dump](https://github.com/fonttools/fonttools/blob/26ac716a8d85c832cba2694dda994c03aafe3386/Tests/ttLib/tables/C_O_L_R_test.py#L68-L165) from a fonttools implementation.
+The format was initially based on a [C++ spec by Google](https://github.com/googlefonts/colr-gradients-spec/blob/master/colr-gradients-spec.md), which has since been updated based on various feedback. A preliminary implementation is reflected in the [noto-handwriting-glyf_colr_1.ttf file](https://github.com/googlefonts/color-fonts/blob/master/fonts/noto-handwriting-glyf_colr_1.ttf) and in [this dump of that font](https://github.com/googlefonts/colr-gradients-spec/files/5064843/noto-handwriting-glyf_colr_1.zip) from a fonttools implementation.
 
-**Note, however:** this draft incorporates some proposed revisions to that format that may not yet be reflected in the above spec, in the fonttools implementation, or in that test font.
+**Note:** this draft may incorporate some proposed revisions not yet be reflected in the above spec, in the fonttools implementation, or in that test font.
 
 ## Metric structures
 
