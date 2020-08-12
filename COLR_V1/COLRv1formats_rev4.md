@@ -10,6 +10,8 @@ The format is primarily based on a [C++ spec by Google](https://github.com/googl
 
 ### _VarFixed Record_ (variable fixed value)
 
+>Cut this? (Fixed values aren't really compatible with variation deltas.)
+
 | Type | Name | Description |
 |-|-|-|
 | Fixed | value | |
@@ -66,8 +68,6 @@ The format is primarily based on a [C++ spec by Google](https://github.com/googl
 ## Color structures
 
 Proposed ```color``` struct has an index to a CPAL ```ColorRecord```, but adds a opacity field that is variable. Note that the CPAL ```ColorRecord``` already has an alpha value. The rationale for adding opacity here is that it is a better design to let a color palette have RGB values only, and to set an alpha / opacity in the elements where the color is used.
-
-> **Note:** We should call it something other than "color record" since that is already used.
 
 ### _ColorIndex Record_ (palette index with variable opacity)
 
@@ -149,8 +149,6 @@ The ```extend``` field must be one of the following values:
 
 ## COLR Header, base glyph and layer records
 
-> Open question: Use 16-bit or 32-bit GIDs? (Google's C++ spec indicates 32-bit, but the font/fonttools implementation are using 16-bit.)
-
 ### _COLR V1 Header_
 
 |Type | Field name | Description |
@@ -179,11 +177,11 @@ The ```extend``` field must be one of the following values:
 |Type | Field name | Description |
 |-|-|-|
 | uint16 | glyphID | (or could change spec to uint32) |
-| Offset32 | layersV1Offset | offset to LayersV1 table, from start of BaseGlyphsV1List table |
+| Offset32 | layerListOffset | offset to LayersV1 table, from start of BaseGlyphsV1List table |
 
 (Size: 6 bytes (or 8 if changing to 32-bit GIDs))
 
-### _LayersV1_ Table
+### _LayerList_ Table
 
 |Type | Field name | Description |
 |-|-|-|
