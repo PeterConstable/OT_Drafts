@@ -2,13 +2,15 @@
 
 This is a draft of structure specifications for a proposed addition to the OpenType spec.
 
-The format is primarily based on a [C++ spec by Google](https://github.com/googlefonts/colr-gradients-spec/blob/master/colr-gradients-spec.md) and on their preliminary implementation reflected in the [noto-handwriting-color_1.ttf file](https://github.com/googlefonts/color-fonts/tree/master/fonts) and in [this dump](https://github.com/fonttools/fonttools/blob/26ac716a8d85c832cba2694dda994c03aafe3386/Tests/ttLib/tables/C_O_L_R_test.py#L68-L165) from a fonttools implementation.
+The format was initially based on a [C++ spec by Google](https://github.com/googlefonts/colr-gradients-spec/blob/master/colr-gradients-spec.md), which has since been updated based on various feedback. A preliminary implementation is reflected in the [noto-handwriting-glyf_colr_1.ttf file](https://github.com/googlefonts/color-fonts/blob/master/fonts/noto-handwriting-glyf_colr_1.ttf) and in [this dump of that font](https://github.com/googlefonts/colr-gradients-spec/files/5064843/noto-handwriting-glyf_colr_1.zip) from a fonttools implementation.
 
-**Note, however:** this draft incorporates some proposed revisions to that format that may not yet be reflected in the above spec, in the fonttools implementation, or in that test font.
+**Note:** this draft may incorporate some proposed revisions not yet be reflected in the above spec, in the fonttools implementation, or in that test font.
 
 ## Metric structures
 
 ### _VarFixed Record_ (variable fixed value)
+
+>Cut this? (Fixed values aren't really compatible with variation deltas.)
 
 | Type | Name | Description |
 |-|-|-|
@@ -66,8 +68,6 @@ The format is primarily based on a [C++ spec by Google](https://github.com/googl
 ## Color structures
 
 Proposed ```color``` struct has an index to a CPAL ```ColorRecord```, but adds a opacity field that is variable. Note that the CPAL ```ColorRecord``` already has an alpha value. The rationale for adding opacity here is that it is a better design to let a color palette have RGB values only, and to set an alpha / opacity in the elements where the color is used.
-
-> **Note:** We should call it something other than "color record" since that is already used.
 
 ### _ColorIndex Record_ (palette index with variable opacity)
 
@@ -149,8 +149,6 @@ The ```extend``` field must be one of the following values:
 
 ## COLR Header, base glyph and layer records
 
-> Open question: Use 16-bit or 32-bit GIDs? (Google's C++ spec indicates 32-bit, but the font/fonttools implementation are using 16-bit.)
-
 ### _COLR V1 Header_
 
 |Type | Field name | Description |
@@ -179,11 +177,11 @@ The ```extend``` field must be one of the following values:
 |Type | Field name | Description |
 |-|-|-|
 | uint16 | glyphID | (or could change spec to uint32) |
-| Offset32 | layersV1Offset | offset to LayersV1 table, from start of BaseGlyphsV1List table |
+| Offset32 | layerListOffset | offset to LayerList table, from start of BaseGlyphsV1List table |
 
 (Size: 6 bytes (or 8 if changing to 32-bit GIDs))
 
-### _LayersV1_ Table
+### _LayerList_ Table
 
 |Type | Field name | Description |
 |-|-|-|
@@ -197,6 +195,6 @@ The ```extend``` field must be one of the following values:
 |Type | Field name | Description |
 |-|-|-|
 | uint16 | glyphID | (or could change spec to uint32) |
-| Offset32 | paintOffset | offset to Paint table, from start of LayersV1List table |
+| Offset32 | paintOffset | offset to Paint table, from start of LayerList table |
 
 (Size: 6 bytes (or 8 if changing to 32-bit GIDs))
