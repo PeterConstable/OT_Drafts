@@ -67,7 +67,7 @@ The format was initially based on a [C++ spec by Google](https://github.com/goog
 
 ## Color structures
 
-Proposed ```color``` struct has an index to a CPAL ```ColorRecord```, but adds a opacity field that is variable. Note that the CPAL ```ColorRecord``` already has an alpha value. The rationale for adding opacity here is that it is a better design to let a color palette have RGB values only, and to set an alpha / opacity in the elements where the color is used.
+Proposed ```color``` struct has an index to a CPAL ```ColorRecord```, but adds an alpha field that is variable. Note that the CPAL ```ColorRecord``` already has an alpha value. The rationale for adding alpha here is that it is a better design to let a color palette have RGB values only, and to set an alpha / opacity in the elements where the color is used.
 
 ### _ColorIndex Record_ (palette index with variable opacity)
 
