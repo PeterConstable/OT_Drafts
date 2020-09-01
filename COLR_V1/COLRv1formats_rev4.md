@@ -81,6 +81,8 @@ Proposed ```color``` struct has an index to a CPAL ```ColorRecord```, but adds a
 
 (Size: 2 + 6 = 8 bytes)
 
+* CPAL palette entries include an alpha value (ColorRecord.alpha). The alpha value from a palette entry must be converted to a value in the range [0.0 – 1.0] and multiplied into the ColorIndex.alpha value.
+
 ### _ColorStop Record_ (color index with normalized distance)
 
 | Type | Name | Description |
