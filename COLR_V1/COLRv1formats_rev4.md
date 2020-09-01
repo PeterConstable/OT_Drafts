@@ -20,6 +20,8 @@ The format was initially based on a [C++ spec by Google](https://github.com/goog
 
 (Size: 4 + 2 \* 2 = 8 bytes)
 
+* *Note:* In order to combine deltas with Fixed values, it will be necessary to extend ItemVariationStore to allow for int32 deltas. With that in place, a Fixed value will combine with a 32-bit delta by treating the Fixed value as though it were an int32.
+
 ### _VarF2Dot14 Record_ (variable, F2Dot14)
 
 | Type | Name | Description |
@@ -33,6 +35,7 @@ The format was initially based on a [C++ spec by Google](https://github.com/goog
 * Inherently limited to range [-2, 2)
 * In some contexts, could be limited to range [-1.0, 1.0]
 * In some COLR contexts, must be in range [0, 1]
+* When combining an F2Dot14 with 16-bit deltas, the F2Dot14 is treated as though it were int16.
 
 ### _VarUFWord Record_ (variable design-grid distance)
 
