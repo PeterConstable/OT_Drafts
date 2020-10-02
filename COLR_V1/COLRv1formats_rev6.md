@@ -221,7 +221,6 @@ Supported composition modes are taken from the W3C [Compositing and Blending Lev
 | VarFWord | x1 | end circle center x coordinate |
 | VarFWord | y1 | end circle center y coordinate |
 | VarUFWord | radius1 | end circle radius |
-| Offset32 | 2By2TransformOffset | Offset to Affine2By2 table, from start of PaintFormat3 table. May be null. |
 
 (Size (header, excluding ColorLine and Affine2By2 subtables): 2 + 4 + 2 \* 12 + 2 \* 6 + 4 = 46 bytes)
 
@@ -229,12 +228,12 @@ Supported composition modes are taken from the W3C [Compositing and Blending Lev
 
 ### Paint Format 4: Glyph outline clip mask
 
-*PaintGlyphOutlineClip table (format 4):*
+*PaintClipGlyph table (format 4):*
 
 | Type | Field name | Description |
 |-|-|-|
 | uint8 | format | Set to 4. |
-| Offset24 | paintOffset | Offset to a Paint table, from start of PaintGlyphOutlineClip table. |
+| Offset24 | paintOffset | Offset to a Paint table, from start of PaintClipGlyph table. |
 | uint16 | glyphID | Glyph ID for the source outline. |
 
 (Size: 6 bytes)
